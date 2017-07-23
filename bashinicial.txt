@@ -1,0 +1,68 @@
+#!/bin/bash
+
+#Instalar R.
+sudo apt-get update
+sudo apt-get install r-base
+
+#Instalar RStudio.
+sudo apt-get install gdebi-core
+wget https://download2.rstudio.org/rstudio-server-1.0.143-amd64.deb
+wget --tries=3 --timeout=120 http://ftp.ca.debian.org/debian/pool/main/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5_amd64.deb
+wget --tries=3 --timeout=120 http://ftp.ca.debian.org/debian/pool/main/g/gst-plugins-base0.10/libgstreamer-plugins-base0.10-0_0.10.36-2_amd64.deb
+sudo dpkg -i libgstreamer0.10-0_0.10.36-1.5_amd64.deb
+sudo dpkg -i libgstreamer-plugins-base0.10-0_0.10.36-2_amd64.deb
+sudo apt-mark hold libgstreamer-plugins-base0.10-0
+sudo apt-mark hold libgstreamer0.10
+sudo apt --fix-broken install
+sudo apt install libjpeg62
+sudo apt install libcurl4-openssl-dev
+sudo dpkg -i rstudio-*-amd64.deb
+sudo apt-get update
+sudo apt-get upgrade
+
+#Configuración Fecha
+gksu gnome-control-center
+
+#Htop
+sudo apt install htop
+
+#Actualizar controladores touchpad.
+sudo apt install xserver-xorg-input-libinput
+sudo apt purge xserver-xorg-input-synaptics
+
+#Instalar Spotify
+# 1. Add the Spotify repository signing key to be able to verify downloaded packages
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+# 2. Add the Spotify repository
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+# 3. Update list of available packages
+sudo apt-get update
+# 4. Install Spotify
+sudo apt-get install spotify-client
+
+#Instalar Pycharm
+sudo apt install python-pip
+sudo add-apt-repository ppa:viktor-krivak/pycharm
+sudo apt update 
+sudo apt install pycharm
+
+#Instalar Anaconda
+bash Anaconda3-4.4.0-Linux-x86_64.sh
+
+#Instalar Jupyter
+sudo apt update
+pip install jupyter
+sudo -H pip install jupyter
+sudo apt upgrade
+
+#Instalar Git
+sudo apt install git
+
+#Instalar EMACS
+sudo add-apt-repository ppa:cassou/emacs
+sudo apt-get install emacs
+sudo apt-get update
+sudo apt-get upgrade
+
+
+sudo reboot
