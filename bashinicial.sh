@@ -5,6 +5,16 @@ sudo apt-get upgrade -y
 #Configuración Fecha
 sudo apt-get install gksu -y
 
+#Instalar pyenv - python 3
+sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo apt-get update
+sudo apt-get install -y python3.6
+sudo apt-get install -y python3-pip
+pip3 install --upgrade pip
+pip3 install ipython
+pip3 install numpy
+pip3 install pandas
+
 #Instalar R.
 sudo apt-get install r-base -y
 
@@ -52,9 +62,8 @@ sudo apt-get update
 
 #Instalar Jupyter
 sudo apt-get update
-pip install jupyter
-pip install jupyter
-apt upgrade
+pip3 install jupyter
+sudo apt upgrade -y
 
 #Instalar Git
 sudo apt-get install git -y
@@ -66,7 +75,18 @@ sudo apt-get install sublime-text-installer -y
 
 #Instalar Oh My Sea zsh
 
-sudo apt-get install zsh
+sudo apt-get install zsh -y
 sudo apt-get install git-core
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+sudo chsh -s `which zsh`
+
+#Instalar Docker
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+sudo apt-get update
+sudo apt-cache policy docker-engine
+sudo apt-get install -y docker-engine
+sudo systemctl status docker
+
 
 sudo reboot
