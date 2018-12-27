@@ -12,11 +12,11 @@ sudo apt-get update
 sudo apt-get install -y python3-pip
 python -m pip install --force-reinstall pip
 
-pip install --upgrade pip
-pip install ipython
-pip install numpy
-pip install pandas
-pip install jupyter
+pip3 install --upgrade pip
+pip3 install ipython
+pip3 install numpy
+pip3 install pandas
+pip3 install jupyter
 
 #Sublime text 3
 echo '-----------------------------------------------'
