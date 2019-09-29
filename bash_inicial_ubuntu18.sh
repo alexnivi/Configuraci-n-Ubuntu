@@ -16,6 +16,9 @@ pip3 install --upgrade pip
 pip3 install numpy
 pip3 install pandas
 
+########## pg_config ####################
+sudo apt-get install python-psycopg2
+
 #Sublime text 3
 echo '-----------------------------------------------'
 echo '------------------SUBLIME TEXT-----------------'
@@ -83,5 +86,14 @@ sudo apt-get update
 sudo apt-cache policy docker-engine
 sudo apt-get install -y docker-engine
 sudo systemctl status docker
+
+#Instalar Adobe Reader
+echo '-----------------------------------------------'
+echo '------------------Adobe Reader-----------------'
+echo '-----------------------------------------------'
+sudo apt install gdebi-core libxml2:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386 libatk-adaptor:i386 58118E89F3A912897C070ADBF76221572C52609D
+wget ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+sudo gdebi AdbeRdr9.5.5-1_i386linux_enu.deb
+
 
 sudo shutdown -r 0
