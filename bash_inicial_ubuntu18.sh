@@ -95,5 +95,12 @@ sudo apt install gdebi-core libxml2:i386 libcanberra-gtk-module:i386 gtk2-engine
 wget ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
 sudo gdebi AdbeRdr9.5.5-1_i386linux_enu.deb
 
+#Leer USB ExFat
+echo '-----------------------------------------------'
+echo '-------------------ExFat USBs------------------'
+echo '-----------------------------------------------'
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install exfat-fuse exfat-utils
 
 sudo shutdown -r 0
