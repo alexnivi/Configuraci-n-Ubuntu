@@ -57,7 +57,12 @@ echo '----------------------JUPYTER------------------'
 echo '-----------------------------------------------'
 sudo apt-get update
 sudo pip install jupyter
+sudo pip install jupyter_contrib_nbextensions
+sudo pip install jupyter_nbextensions_configurator
 sudo apt upgrade -y
+jupyter nbextensions_configurator enable --user
+jupyter contrib nbextension install --user
+jupyter nbextension enable varInspector/main
 
 #Instalar Git
 echo '-----------------------------------------------'
@@ -95,11 +100,20 @@ sudo apt install gdebi-core libxml2:i386 libcanberra-gtk-module:i386 gtk2-engine
 wget ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
 sudo gdebi AdbeRdr9.5.5-1_i386linux_enu.deb
 
+#Instalar Controladores extras de video
+echo '-----------------------------------------------'
+echo '------------Controladores de Video-------------'
+echo '-----------------------------------------------'
+sudo apt-get install -y ubuntu-restricted-extras
+sudo apt-get install gstreamer1.0-libav ffmpeg
+sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+
 #Leer USB ExFat
 echo '-----------------------------------------------'
 echo '-------------------ExFat USBs------------------'
 echo '-----------------------------------------------'
 sudo add-apt-repository universe
+sudo apt upgrade
 sudo apt update
 sudo apt install exfat-fuse exfat-utils
 
